@@ -13,3 +13,4 @@ build/
 # local IDE settings
 .vscode/
 .idea/
+node_modules/
