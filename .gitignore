@@ -1,36 +1,16 @@
-# Node.js dependencies
+# dependencies
 node_modules/
-
-# Local environment variables
 .env
 
-
-# Production build output
+# production
 dist/
 build/
 
-# System files
-# Node.js
-/node_modules
-/dist
-/.next
-
-# Build files
-/build
-/*.log
-
-# Environment files
-.env
-.env.local
-
-# OS files
+# misc
 .DS_Store
 *.log
 
-# IDE settings
+# local IDE settings
 .vscode/
 .idea/
-node_modules/
-node_modules/
-/node_modules
-/dist
+.gitignore.save
