@@ -10,6 +10,20 @@ dist/
 build/
 
 # System files
+# Node.js
+/node_modules
+/dist
+/.next
+
+# Build files
+/build
+/*.log
+
+# Environment files
+.env
+.env.local
+
+# OS files
 .DS_Store
 *.log
 
