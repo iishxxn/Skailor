@@ -1,18 +1,24 @@
-# dependencies
+# Node.js dependencies
 node_modules/
+
+# Local environment variables
 .env
 
-# production
+
+# Production build output
 dist/
 build/
 
-# misc
+# System files
 .DS_Store
 *.log
 
-# local IDE settings
+# IDE settings
 .vscode/
 .idea/
-node_modules/
-node_modules/
+
+# Git ignore backup
 .gitignore.save
+
+# Optional: Skailor subrepo
+skailor-clean/
