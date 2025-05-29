@@ -1,7 +1,7 @@
 // src/pages/home.jsx
-import Hero from "../components/hero";
+import Hero from "../components/Hero";
 
-export default function home() {
+export default function Home() {
   return (
     <>
       <Hero />
