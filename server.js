@@ -1,3 +1,4 @@
+// server.js
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -11,5 +12,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, '0.0.0.0', () => {
-  console.log(`Skailor server listening on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
