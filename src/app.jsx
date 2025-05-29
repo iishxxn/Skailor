@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Chapters from "./pages/Chapters";
-import ChapterDetail from "./pages/ChapterDetail";
+import Home from "@pages/Home";
+import Chapters from "@pages/Chapters";
+import ChapterDetail from "@pages/ChapterDetail";
 
 export default function App() {
   return (
