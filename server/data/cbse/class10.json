@@ -1,8 +1,0 @@
-{
-  "Math": {
-    "Chapters": ["Real Numbers", "Polynomials", "Pair of Linear Equations"]
-  },
-  "Science": {
-    "Chapters": ["Chemical Reactions", "Acids Bases and Salts", "Metals and Non-Metals"]
-  }
-}
