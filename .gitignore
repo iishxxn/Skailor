@@ -16,9 +16,7 @@ build/
 # IDE settings
 .vscode/
 .idea/
-
-# Git ignore backup
-.gitignore.save
-
-# Optional: Skailor subrepo
-skailor-clean/
+node_modules/
+node_modules/
+/node_modules
+/dist
