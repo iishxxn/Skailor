@@ -3,13 +3,11 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist',
+  },
   server: {
-    port: 5173,
-    open: true,
-    proxy: {
-      // Proxy API requests to your Express backend
-      '/chat': 'http://localhost:3000',
-      '/data': 'http://localhost:3000'
-    }
-  }
+    host: '0.0.0.0', // Bind to all interfaces
+    port: process.env.PORT || 3000, // Use Render-assigned port or default to 3000
+  },
 });

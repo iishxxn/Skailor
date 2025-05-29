@@ -1,17 +1,29 @@
-import { useParams } from 'react-router-dom'
-import { subjects } from '../data/subjects'
-import ChapterList from '../ components/ChapterList'
-
+import { useParams, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export default function Chapters() {
-  const { subjectId } = useParams()
-  const subject = subjects.find((s) => s.id === subjectId)
-
-  if (!subject) return <div className="p-10">Subject not found.</div>
-
+  const { classNum } = useParams();
+  const [data, setData] = useState({});
+  useEffect(() => {
+    axios.get(`https://your-backend-url.onrender.com/data/${classNum}`)
+      .then(res => setData(res.data))
+      .catch(() => alert("Error loading data"));
+  }, [classNum]);
   return (
-    <div className="p-8 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">{subject.name}</h1>
-      <ChapterList chapters={subject.chapters} />
+    <div className="p-8">
+      <h1 className="text-2xl font-bold">Class {classNum} Subjects</h1>
+      {Object.keys(data).map(subject => (
+        <div key={subject}>
+          <h2 className="text-xl mt-4">{subject}</h2>
+          <ul className="ml-4 list-disc">
+            {data[subject].Chapters.map(chap => (
+              <li key={chap}>
+                <Link to={`/class/${classNum}/${subject}`} className="text-blue-500">{chap}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
