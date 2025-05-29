@@ -1,4 +1,4 @@
-// src/components/Hero.jsx
+// src/components/hero.jsx
 export default function Hero() {
   return (
     <section className="bg-purple-600 text-white py-12 px-4">
