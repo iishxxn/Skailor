@@ -4,18 +4,20 @@
   "private": true,
   "description": "Skailor: An AI-powered education platform built with a modern stack.",
   "workspaces": [
-    "apps/*"
-  ],
+  "apps/frontend",
+  "apps/backend"
+],
   "scripts": {
-    "start:backend": "npm run start --workspace=apps/backend",
-    "build:frontend": "npm run build --workspace=apps/frontend",
-    "dev:frontend": "npm run dev --workspace=apps/frontend",
-    "lint:frontend": "npm run lint --workspace=apps/frontend",
-    "lint:backend": "npm run lint --workspace=apps/backend",
-    "lint": "npm run lint:frontend && npm run lint:backend",
-    "dev": "concurrently \"npm run dev:frontend\" \"npm run start:backend\"",
-    "format": "npm run format --workspace=apps/frontend && npm run format --workspace=apps/backend"
-  },
+  "start": "npm --workspace=backend start",
+  "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
+  "build:frontend": "npm run build --workspace=frontend",
+  "build:backend": "npm run build --workspace=backend",
+  "dev": "concurrently \"npm run dev:frontend\" \"npm run start:backend\"",
+  "dev:frontend": "npm run dev --workspace=frontend",
+  "start:backend": "npm run start --workspace=backend",
+  "lint": "npm run lint --workspace=frontend && npm run lint --workspace=backend",
+  "format": "npm run format --workspace=frontend && npm run format --workspace=backend"
+},
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=7.0.0"
