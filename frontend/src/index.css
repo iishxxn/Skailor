@@ -1,14 +1,43 @@
+/* index.css */
+
+/* Import Tailwind's base, components, and utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: Custom global styles */
+/* Optional: Global resets or customizations */
 html, body {
-  @apply bg-white text-gray-900; /* Example Tailwind utility classes */
-  font-family: 'Inter', sans-serif; /* Optional: Add custom font */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f9fafb; /* Tailwind's gray-50 */
+  color: #1f2937; /* Tailwind's gray-800 */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Optional: Smooth scroll for UX */
-html {
-  scroll-behavior: smooth;
+/* Optional: Add global classes or overrides */
+a {
+  @apply text-blue-600 hover:underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+/* Optional: Container customization */
+.container {
+  @apply mx-auto px-4 max-w-7xl;
+}
+
+/* Optional: Utility classes for custom animations or transitions */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
