@@ -8,15 +8,15 @@
   "apps/backend"
 ],
   "scripts": {
-  "start": "npm --workspace=backend start",
-  "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
-  "build:frontend": "npm run build --workspace=frontend",
-  "build:backend": "npm run build --workspace=backend",
-  "dev": "concurrently \"npm run dev:frontend\" \"npm run start:backend\"",
-  "dev:frontend": "npm run dev --workspace=frontend",
-  "start:backend": "npm run start --workspace=backend",
-  "lint": "npm run lint --workspace=frontend && npm run lint --workspace=backend",
-  "format": "npm run format --workspace=frontend && npm run format --workspace=backend"
+  "start": "npm --workspace=apps/backend start",
+  "build": "npm run build --workspace=apps/frontend && npm run build --workspace=apps/backend",
+  "build:frontend": "npm run build --workspace=apps/frontend",
+  "build:backend": "npm run build --workspace=apps/backend",
+  "dev": "concurrently \"npm run dev:apps/frontend\" \"npm run start:apps/backend\"",
+  "dev:frontend": "npm run dev --workspace=apps/frontend",
+  "start:backend": "npm run start --workspace=apps/backend",
+  "lint": "npm run lint --workspace=apps/frontend && npm run lint --workspace=apps/backend",
+  "format": "npm run format --workspace=apps/frontend && npm run format --workspace=apps/backend"
 },
   "engines": {
     "node": ">=16.0.0",
