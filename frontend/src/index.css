@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Optional: Custom global styles */
+html, body {
+  @apply bg-white text-gray-900; /* Example Tailwind utility classes */
+  font-family: 'Inter', sans-serif; /* Optional: Add custom font */
+}
+
+/* Optional: Smooth scroll for UX */
+html {
+  scroll-behavior: smooth;
+}

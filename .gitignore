@@ -1,5 +1,12 @@
+# Node modules directory
 node_modules
+
+# Environment variables files
 .env*
+  
+# macOS system files
 .DS_Store
+
+# Log files
 *.log
 npm-debug.log*

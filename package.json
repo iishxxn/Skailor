@@ -10,7 +10,8 @@
   "scripts": {
     "install:all": "npm install --workspaces",
     "build": "npm run build --workspaces",
-    "start": "npm run start --workspace=backend"
+    "start": "npm run start --workspace=backend",
+    "dev": "npm run dev --workspace=frontend"
   },
   "engines": {
     "node": ">=16.0.0",
@@ -20,7 +21,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IshaanKalia/Skailor.git"
+    "url": "https://github.com/IshaanKalia/Skailor.git"
   },
   "bugs": {
     "url": "https://github.com/IshaanKalia/Skailor/issues"
@@ -35,3 +36,4 @@
     "nodemon": "^3.1.10"
   }
 }
+

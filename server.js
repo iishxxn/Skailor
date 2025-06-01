@@ -2,35 +2,44 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 const aiRoutes = require('./backend/routes/ai');
 
-// Initialize environment variables
+// Load environment variables from .env file
 dotenv.config();
 
-// Create Express app
+// Initialize Express app
 const app = express();
 
-// Middleware
-app.use(cors()); // Enable CORS for all routes
-app.use(express.json()); // Parse JSON requests
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded requests
+// Middleware setup
+app.use(cors()); // Enable CORS for all origins
+app.use(express.json()); // Parse JSON bodies
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
-// Routes
+// API Routes
 app.use('/api/ai', aiRoutes);
 
-// Health Check Endpoint
+// Health check endpoint
 app.get('/', (req, res) => {
-  res.send('Skailor Backend Server is up and running 🚀');
+  res.send('🌟 Skailor Backend Server is up and running 🚀');
 });
 
-// Error Handling Middleware
+// Serve static frontend if needed in production
+const frontendPath = path.join(__dirname, 'frontend', 'dist');
+app.use(express.static(frontendPath));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'index.html'));
+});
+
+// Global error handler
 app.use((err, req, res, next) => {
-  console.error('Server Error:', err.stack);
+  console.error('💥 Server Error:', err.stack);
   res.status(500).json({ message: 'Internal Server Error' });
 });
 
-// Start the server
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`✅ Skailor server is running at http://localhost:${PORT}`);
+  console.log(`✅ Skailor server running at http://localhost:${PORT}`);
 });
+
