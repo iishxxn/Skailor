@@ -1,6 +1,9 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import dotenv from 'dotenv'
+import path from 'path'
+
+dotenv.config() // Load .env variables
 
 export default defineConfig({
   plugins: [react()],
@@ -10,7 +13,7 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0', // Allows access from network devices
-    port: 3000,      // Optional: specify port (default 5173)
+    port: parseInt(process.env.VITE_PORT) || 5173, // Use VITE_PORT or fallback
     open: true,      // Opens browser automatically
     strictPort: true // Ensures the port is strictly followed
   },
