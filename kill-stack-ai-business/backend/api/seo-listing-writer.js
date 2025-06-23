@@ -1,0 +1,1 @@
+Sample content for seo-listing-writer.js

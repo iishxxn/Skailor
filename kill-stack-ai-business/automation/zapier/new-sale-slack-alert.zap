@@ -1,0 +1,1 @@
+Sample content for new-sale-slack-alert.zap
